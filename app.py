@@ -3,6 +3,7 @@ import re
 import os
 import subprocess
 import tempfile
+import urllib.parse
 
 app = Flask(__name__)
 
@@ -29,7 +30,9 @@ def index():
         match = re.search(r"curl\s+'([^']+)'", curl_command)
         if match:
             url = match.group(1)
-            filename = os.path.basename(url)
+            # 先解碼 URL，再取檔名
+            decoded_url = urllib.parse.unquote(url)
+            filename = os.path.basename(decoded_url)
             if not filename.lower().endswith('.pdf'):
                 filename = 'downloaded_file.pdf'
         else:
