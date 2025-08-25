@@ -1,11 +1,15 @@
 # cURL 下載器 (PDF 版本)
+> 適用於部分無法右鍵另存 PDF 的檔案
 
-可以讓你直接使用 cURL 命令列下載指定資源的工具
+這工具可以讓你直接使用 cURL 命令列下載指定資源的工具
+
 目前提供下載方式：
+
+可以自己選一種喜好的方式進行
 - 直接命令列 cURL 下載的方法
 - 執行 download.py 下載
-- 自己部署 flask 在網頁下載
-- 或許點擊我部署好的網頁 [點我](https://curl-download.koyeb.app/)
+- 自己部署 flask 後在自己本地網頁下載
+- 或者點擊我部署好的網頁 [點我](https://curl-download.koyeb.app/)
 
 # 快速開始
 
@@ -45,7 +49,7 @@ curl 'https://... -o <your_pdf_filename.pfd>
 python3 download.py
 ``` 
 
-## 自己部署 flask 在網頁下載
+## 自己部署 flask 後在自己本地網頁下載
 
 基於 Flask 的網頁服務，可以在網頁上貼上 cURL 指令，伺服器會幫你下載檔案並提供下載連結。
 
@@ -104,5 +108,6 @@ docker run -p 5001:5001 flask-curl-downloader
 
 
 ## 不仿可以試試看Koyeb部署（非工商）
+
 [![Deploy to Koyeb](https://www.koyeb.com/static/images/deploy/button.svg)](https://app.koyeb.com/deploy?name=flask-curl-downloader-python&type=git&repository=Xhinmin%2Fflask-curl-downloader-python&branch=main&builder=dockerfile&instance_type=free&regions=was&instances_min=0&autoscaling_sleep_idle_delay=300&ports=5001%3Bhttp%3B%2F&hc_protocol%5B5001%5D=tcp&hc_grace_period%5B5001%5D=5&hc_interval%5B5001%5D=30&hc_restart_limit%5B5001%5D=3&hc_timeout%5B5001%5D=5&hc_path%5B5001%5D=%2F&hc_method%5B5001%5D=get)
 ---
